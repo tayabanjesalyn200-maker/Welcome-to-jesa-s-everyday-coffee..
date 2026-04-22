@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to Jesa's Everyday Coffee- Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, #00ffff 1.5px, transparent 1.5px),
+    radial-gradient(circle, #0099ff 1.5px, transparent 1.5px),
+    radial-gradient(circle, #bd00ff 1.5px, transparent 1.5px);
+  background-size: 45px 45px;
+  background-position: 0 0, 22px 22px, 12px 12px;
+  animation: glitterMove 8s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body {
+background-color:#0d1117;
+font-family: 'Quicksand', sans-serif;
+text-align: center;
+margin: 0;
+position: relative;
+min-height: 100vh;
+box-shadow: inset 0 0 150px 60px rgba(0, 183, 255, 0.4), inset 0 0 250px 100px rgba(189, 0, 255, 0.2);
+animation: glowBg 3s infinite alternate ease-in-out;
+display: flex;
+flex-direction: column;
+padding-top: 20px;
+}
+
+h1 {
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 3rem;
+color:#00ffff;
+margin-top: 20px;
+margin-bottom: 10px;
+text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff, 0 0 30px #bd00ff, 0 0 40px #ff0080;
+position: relative;
+z-index: 1;
+animation: textGlow 2s infinite alternate ease-in-out;
+}
+
+nav {
+position: relative;
+z-index: 1;
+margin-bottom: 30px;
+}
+
+nav a {
+text-decoration: none;
+color: #ffffff;
+font-weight: bold;
+margin: 10px;
+padding: 8px 12px;
+border-radius: 12px;
+background-color: #1a1f2e;
+border: 1px solid #ff0080;
+transition: 0.3s;
+position: relative;
+z-index: 1;
+animation: colorChangeGlow 1s infinite alternate ease-in-out;
+}
+
+nav a:hover {
+background-color:#00ffff;
+color:#0d1117;
+box-shadow: 0 0 15px #00ffff,0 0 25px #0099ff
+}
+
+hr {
+border: 1px solid #0099ff;
+box-shadow: 0 0 10px #0099ff, 0 0 20px #bd00ff;
+margin: 20px auto;
+max-width: 80%;
+position: relative;
+z-index: 1;
+}
+
+.home-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0 auto;
+position: relative;
+z-index: 1;
+max-width: 1200px;
+}
+
+.big-card {
+background-color:#1a1f2e !important;
+border: 2px solid #333333;
+border-radius:25px;
+width: 100%;
+max-width: 650px;
+padding:35px;
+animation: boxGlow 1.5s infinite alternate ease-in-out, bounce 1s infinite ease-in-out;
+transition: all 0.3s ease;
+color: #e0e0e0;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+}
+
+.big-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #0099ff, #bd00ff, #ff0080, #00ffff);
+  border-radius: 25px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.big-card:hover {
+transform: scale(1.03);
+border-color: transparent;
+box-shadow: 0 0 30px #00ffff, 0 0 60px #0099ff, 0 0 40px #bd00ff, 0 0 80px #ff0080;
+}
+
+.big-card:hover::before {
+  opacity: 1;
+}
+
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  text-align: left;
+}
+
+/* ✅✅✅ SLIDER PARA SA 6 PICTURES ✅✅✅ */
+.welcome-slider {
+  width: 150px;
+  height: 180px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+.welcome-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade6 18s infinite linear;
+}
+
+/* DELAY PARA SUNOD-SUNOD MAGPALIT YUNG 6 PICS */
+.welcome-slider img:nth-child(1) { animation-delay: 0s; }
+.welcome-slider img:nth-child(2) { animation-delay: 3s; }
+.welcome-slider img:nth-child(3) { animation-delay: 6s; }
+.welcome-slider img:nth-child(4) { animation-delay: 9s; }
+.welcome-slider img:nth-child(5) { animation-delay: 12s; }
+.welcome-slider img:nth-child(6) { animation-delay: 15s; }
+
+@keyframes fade6 {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  23% { opacity: 1; }
+  33% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.welcome-text {
+  flex: 1;
+}
+
+.big-card p {
+font-size: 20px; 
+line-height: 1.8;
+color: #ffffff; 
+text-shadow: 0 0 5px #00ffff;
+margin: 0;
+}
+
+.big-card b {
+color: #00ffff;
+font-size: 24px; 
+text-shadow: 0 0 10px #00ffff, 0 0 20px #ff0080;
+}
+
+@keyframes glitterMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(45px, 45px); }
+}
+
+@keyframes glowBg {
+  from { box-shadow: inset 0 0 70px 30px rgba(0, 183, 255, 0.3); }
+  to { box-shadow: inset 0 0 120px 60px rgba(0, 183, 255, 0.6); }
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff; }
+  to { text-shadow: 0 0 20px #00ffff, 0 0 40px #bd00ff, 0 0 60px #ff0080; }
+}
+
+@keyframes boxGlow {
+  0% { box-shadow: 0 0 15px #00ffff, 0 0 30px #0099ff; }
+  50% { box-shadow: 0 0 25px #bd00ff, 0 0 40px #ff0080; }
+  100% { box-shadow: 0 0 18px #ff0080, 0 0 35px #00ffff; }
+}
+
+@keyframes colorChangeGlow {
+  0% { 
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #0099ff;
+  }
+  25% { 
+    color: #ff0080;
+    text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #bd00ff;
+  }
+  50% { 
+    color: #bd00ff;
+    text-shadow: 0 0 10px #bd00ff, 0 0 20px #bd00ff, 0 0 30px #0099ff;
+  }
+  75% { 
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00, 0 0 20px #ff0080, 0 0 30px #ffffff;
+  }
+  100% { 
+    color: #00ccff;
+    text-shadow: 0 0 10px #00ccff, 0 0 20px #00ffff, 0 0 40px #ff0080;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+</style>
+</head>
+<body>
+
+<h1>Welcome to Jesa's Everyday Coffee</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Me</a>
+<a href="contact.html">Contact Info</a>
+<a href="goals.html">My Goals</a>
+<a href="environment.html">My Environment</a>
+<a href="future.html">My Future Me</a>
+<a href="street.html">Street Photography</a>
+<a href="logo.html">My Logo</a>
+<a href="ty.html">Thank you</a>
+</nav>
+
+<hr>
+
+<div class="home-container">
+
+  <div class="big-card">
+    <div class="welcome-content">
+     
+      <div class="welcome-slider">
+        <img src="welcome.jpg.jpg"" alt="Welcome Picture">
+        <img src="wel2.jpg.jpg"" alt="Welcome Picture">
+        <img src="wel3.jpg.jpg"" alt="Welcome Picture">
+        <img src="wel4.jpg.jpg"" alt="Welcome Picture">
+        <img src="wel5.jpg.jpg"" alt="Welcome Picture">
+        <img src="wel6.jpg.jpg"" alt="Welcome Picture">
+      </div>
+      <div class="welcome-text">
+        <p>
+        <b>BONJOUR!</b><br>
+        Welcome to my personal website! 
+		
+		Ako nga pala toh! yung kaya kang ipaglaban...pero kung aso ang kalaban, paunahan sa takbuhan.Funny pero D kita lolokohin Bwahah
+		<br><br>For more information, feel free to explore and get to know more about me.<br> 
+        I hope you enjoy your visit.
+        
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
